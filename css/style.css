@@ -34,4 +34,44 @@ header {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main,
+.heading-primary-sub {
+  display: block;
+}
+
+.heading-primary-main {
+  font-size: 60px;
+  letter-spacing: 36px;
+  font-weight: 400;
+}
+
+.heading-primary-sub {
+  font-size: 20px;
+  letter-spacing: 18px;
+  font-weight: 700;
 }
