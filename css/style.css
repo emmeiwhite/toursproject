@@ -52,26 +52,95 @@ header {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main,
 .heading-primary-sub {
   display: block;
+  animation-timing-function: ease-out;
 }
 
 .heading-primary-main {
   font-size: 60px;
   letter-spacing: 36px;
   font-weight: 400;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
 }
 
 .heading-primary-sub {
   font-size: 20px;
   letter-spacing: 18px;
   font-weight: 700;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+}
+
+/* For animations we basically need two properties.
+    opacity and transform. And these two makes our code optimzed as well.
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* button style */
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
